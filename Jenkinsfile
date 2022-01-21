@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git branch: 'main', url: 'https://github.com/sog4-devops/api-app.git'
+                checkout scm 
                 sh "mvn -Dmaven.test.failure.ignore=true clean install"
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
