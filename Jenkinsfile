@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 checkout scm 
-                sh "mvn -Dmaven.test.failure.ignore=true clean install"
+                sh "mvn -Dmaven.test.failure.ignore=true clean deploy"
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
                 
